@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Friend Quiz</title>
+</head>
+    <style>
+body {
+background-color: teal;
+font-family: Arial, sans-serif;
+}
+        
+        
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: beige;
+background-image: url("friends.jpg");
+color: white;
+}
+        
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h3 {
+clear: both;
+padding-top: 20px;
+}
+        
+h1 { 
+text-align: center;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+
+</style>
+
+<body>
+    <div id="main">
+    <div id="header"> <h1> Do you know Friends? </h1></div>
+        
+    
+<form id="form1">
+<fieldset>
+    
+<h3>Who said: "Could I BE wearing anymore clothes?"</h3>
+<label for="var_info"><input type="radio" name="one" value="10" />Joey</label>
+<label for="var_condition"><input type="radio" name="one" value="0" />Rachel</label>
+<label for="var_condition"><input type="radio" name="one" value="0" />Monica</label>
+<label for="var_condition"><input type="radio" name="one" value="0" />Ross</label>
+    
+<h3>What did Chandler lose at their wedding?</h3>
+<label for="sub_string"><input type="radio" name="two" value="10" />Cameras</label>
+<label for="sub_join"><input type="radio" name="two" value="0" />Gifts</label>
+<label for="sub_info"><input type="radio" name="two" value="0" />His shoes</label>
+<label for="sub_condition"><input type="radio" name="two" value="0" />His vows</label>
+    
+<br></br>
+<img src="chandler.gif">
+    
+<h3>Who said: "OH MY GOD"</h3>
+<label for="sub_string"><input type="radio" name="ten" value="10" />Janice</label>
+<label for="sub_join"><input type="radio" name="ten" value="0" />Rachel</label>
+<label for="sub_info"><input type="radio" name="ten" value="0" />Carrie</label>
+<label for="sub_condition"><input type="radio" name="ten" value="0" />Monica</label>
+    
+<h3>Who is Marcel?</h3>
+<label for="if_string"><input type="radio" name="five" value="0" />Phoebe's cat</label>
+<label for="if_join"><input type="radio" name="five" value="0" />The barista</label>
+<label for="if_info"><input type="radio" name="five" value="0" />Chandler's old roommate</label>
+<label for="if_condition"><input type="radio" name="five" value="10" />Ross' monkey</label>
+
+<br></br>
+<img src="monica.gif">
+    
+<h3>What is the name of the man Rachel almost maried?</h3>
+<label for="cat_string"><input type="radio" name="four" value="0" />Scott</label>
+<label for="cat_join"><input type="radio" name="four" value="10" />Barry</label>
+<label for="cat_info"><input type="radio" name="four" value="0" />George</label>
+<label for="cat_condition"><input type="radio" name="four" value="0" />John</label>
+  
+    
+<h3>What does Ross say when he's taking his couch up the stairs?</h3>
+<label for="if_string"><input type="radio" name="six" value="0" />HELP</label>
+<label for="if_join"><input type="radio" name="six" value="0" />WAIT</label>
+<label for="if_info"><input type="radio" name="six" value="10" />PIVOT</label>
+<label for="if_condition"><input type="radio" name="six" value="0" />STOP</label>
+    
+<br></br>
+<img src="ross.gif">
+    
+<h3>What is the name of the birth mother of Monica and Chandler's twins?</h3>
+<label for="if_string"><input type="radio" name="seven" value="0" />Susan</label>
+<label for="if_join"><input type="radio" name="seven" value="0" />Phoebe</label>
+<label for="if_info"><input type="radio" name="seven" value="0" />Michelle</label>
+<label for="if_condition"><input type="radio" name="seven" value="10" />Erica</label>
+    
+<h3>Who did Joey play in Days of our Lives?</h3>
+<label for="if_string"><input type="radio" name="nine" value="0" />Dr. John Carter</label>
+<label for="if_join"><input type="radio" name="nine" value="0" />Dr. Doug Ross</label>
+<label for="if_info"><input type="radio" name="nine" value="0" />Dr. Derrick Sloan</label>
+<label for="if_condition"><input type="radio" name="nine" value="10" />Dr. Drake Ramoray</label>
+    
+<br></br>
+<img src="joey.gif">    
+    
+<h3>Who was Phoebe's first romance with?</h3>
+<label for="cat_string"><input type="radio" name="eight" value="0" />Mike</label>
+<label for="cat_join"><input type="radio" name="eight" value="10" />David</label>
+<label for="cat_info"><input type="radio" name="eight" value="0" />Joey</label>
+<label for="cat_condition"><input type="radio" name="eight" value="0" />Barry</label>
+
+<h3>What does Ross say when Rachel mentions him cheating on her?</h3>
+<label for="sub_string"><input type="radio" name="three" value="10" />"We were on a break!"</label>
+<label for="sub_join"><input type="radio" name="three" value="0" />"I am so so sorry Rachel!"</label>
+<label for="sub_info"><input type="radio" name="three" value="0" />"Please forgive my mistakes!"</label>
+<label for="sub_condition"><input type="radio" name="three" value="0" />"I won't do it again!"</label>    
+    
+
+<button type="submit" value="Submit">Submit</button>
+</fieldset>
+</form>
+
+<p>And you're Friends knowledge is... <span id="grade">__</span></p>
+<p id="grade2"></p>
+    
+</div>
+    
+<script>
+document.getElementById("form1").onsubmit=function() {
+       one = parseInt(document.querySelector('input[name = "one"]:checked').value);
+	   two = parseInt(document.querySelector('input[name = "two"]:checked').value);
+	   three = parseInt(document.querySelector('input[name = "three"]:checked').value);
+	   four = parseInt(document.querySelector('input[name = "four"]:checked').value);
+	   five = parseInt(document.querySelector('input[name = "five"]:checked').value);
+       six = parseInt(document.querySelector('input[name = "six"]:checked').value);
+	   seven = parseInt(document.querySelector('input[name = "seven"]:checked').value);
+	   eight = parseInt(document.querySelector('input[name = "eight"]:checked').value);
+	   nine = parseInt(document.querySelector('input[name = "nine"]:checked').value);
+	   ten = parseInt(document.querySelector('input[name = "ten"]:checked').value);
+	   
+	   result = one + two + three + four + five + six + seven + eight + nine + ten;
+	   
+	document.getElementById("grade").innerHTML = result;
+    
+if (result == 0) {result2 = "Don't try again until you've watched the show!<br /><br /><br /><img src='phoebe.gif' width='500' />"};
+if (result == 10) {result2 = "Seriously? Thats' all you know?<br /><br /><br /><img src='janice.gif' width='500' />"};
+if (result == 20) {result2 = "Ugh, why.<br /><br /><br /><img src='ross1.gif' width='500' />"};
+if (result == 30) {result2 = "Are you really a Friend's fanatic if you only know three questions?<br /><br /><br /><img src='joey1.gif' width='500' />"};
+if (result == 40) {result2 = "Almost there, but not really<br /><br /><br /><img src='monica1.gif' width='500' />"};
+if (result == 50) {result2 = "Congrats, you only know half of the show...<br /><br /><br /><img src='richard.gif' width='500' />"};
+if (result == 60) {result2 = "So close, but not enough<br /><br /><br /><img src='chandler1.gif' width='500' />"};
+if (result == 70) {result2 = "Well, I mean, you passed right?<br /><br /><br /><img src='joey3.gif' width='500' />"};
+if (result == 80) {result2 = "C'mon!! You're almost there!<br /><br /><br /><img src='monica and chandler.gif' width='500' />"};
+if (result == 90) {result2 = "AGAIN AGAIN AGAIN!! <br /><br /><br /><img src='rachel2.gif' width='500' />"};
+if (result == 100) {result2 = "In the words of Joey Tribbiani... <br /><br /><br /><img src='joey2.gif' width='500'/>"};
+
+
+document.getElementById("grade2").innerHTML = result2; 
+
+
+	   
+
+
+return false;
+} 
+
+</script>
+
+    
+    
+</body>
+    
+    
+</html>
